@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:01:11 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/05 16:14:37 by gdelhota         ###   ########.fr       */
+/*   Updated: 2024/11/11 13:03:41 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int main(int ac, char **av)
 {
 	if (ac > 2)
 	{
-		char	*dest;
-		dest = malloc(atoi(av[1]) * sizeof(char));
-		strcpy(dest, av[2]);
-		printf("cat : %d \n %s\n", (int)strlcat(dest, av[3], atoi(av[4])), dest);
-		strcpy(dest, av[2]);
-		printf("ft_cat : %d \n %s\n", (int)ft_strlcat(dest, av[3], atoi(av[4])), dest);
+		char	*d;
+		d = malloc(atoi(av[1]) * sizeof(char));
+		strcpy(d, av[2]);
+		printf("cat : %d \n %s\n", (int)strlcat(d, av[3], atoi(av[4])), d);
+		strcpy(d, av[2]);
+		printf("ft_cat : %d \n %s\n", (int)ft_strlcat(d, av[3], atoi(av[4])), d);
 	}
 }*/
