@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:14:36 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/09 15:53:48 by gdelhota         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:51:35 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 		if (i > j)
 			res[count++] = ft_substr(s, j, (i - j));
 		if (count > 0 && !res[count - 1])
-			ft_free_all(res, count);
+			return (ft_free_all(res, count - 1));
 	}
 	res[count] = 0;
 	return (res);
