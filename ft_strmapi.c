@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:19:51 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/08 13:07:59 by gdelhota         ###   ########.fr       */
+/*   Created: 2024/11/09 14:31:42 by gdelhota          #+#    #+#             */
+/*   Updated: 2024/11/09 15:52:08 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	unsigned char	*cast;
+	char	*res;
+	size_t	i;
 
-	if (n == 0)
+	res = malloc(ft_strlen(s) + 1);
+	if (!res)
 		return (0);
-	cast = (unsigned char *) s;
-	i = 0;
-	while (i < n - 1 && cast[i] != (unsigned char) c)
-		i++;
-	if (cast[i] == (unsigned char) c)
-		return ((void *) &cast[i]);
-	return (0);
+	i = -1;
+	while (s[++i])
+		res[i] = (*f)(i, s[i]);
+	res[i] = 0;
+	return (res);
 }
-
-/*#include <stdio.h>
-int	main(int ac, char **av)
-{
-	if (ac > 0)
-		printf("%s", (char *) ft_memchr(av[1], av[2][0], ft_atoi(av[3])));
-}*/

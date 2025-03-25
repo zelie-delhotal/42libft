@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:19:51 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/08 13:07:59 by gdelhota         ###   ########.fr       */
+/*   Created: 2024/11/08 14:12:30 by gdelhota          #+#    #+#             */
+/*   Updated: 2024/11/09 16:26:14 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*cast;
+	char	*res;
+	size_t	i;
 
-	if (n == 0)
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	if (start >= ft_strlen(s))
+		len = 0;
+	res = ft_calloc(len + 1, 1);
+	if (!res)
 		return (0);
-	cast = (unsigned char *) s;
 	i = 0;
-	while (i < n - 1 && cast[i] != (unsigned char) c)
+	while (i < len && s[start + i])
+	{
+		res[i] = s[start + i];
 		i++;
-	if (cast[i] == (unsigned char) c)
-		return ((void *) &cast[i]);
-	return (0);
+	}
+	return (res);
 }
 
 /*#include <stdio.h>
 int	main(int ac, char **av)
 {
-	if (ac > 0)
-		printf("%s", (char *) ft_memchr(av[1], av[2][0], ft_atoi(av[3])));
+	if (ac > 2)
+	{
+		printf("%s", ft_substr(av[1], ft_atoi(av[2]), ft_atoi(av[3])));
+	}
 }*/

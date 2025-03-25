@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:20:31 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/06 16:30:01 by gdelhota         ###   ########.fr       */
+/*   Updated: 2024/11/09 16:02:15 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (len == 0)
 		return (0);
 	i = 0;
-	while (big[i] && i < len - 1)
+	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && i + j < len - 1 && big[i + j])
+		while (big[i + j] == little[j] && i + j < len && big[i + j])
 			j++;
-		if (little[j] == 0
-			|| (little[j] == big[i + j] && little[j + 1] == 0))
+		if (little[j] == 0)
 			return ((char *) &big[i]);
 		i++;
 	}
@@ -49,7 +48,8 @@ void ft_tester(char *big, char *little, size_t len)
 int	main(void)
 {
 	char *test = "test";
-	ft_tester("test", "st", 4);
+	//ft_strnstr(0, 0, 5);
+	ft_tester("test", "t", 1);
 	ft_tester(test, test, 0);
 	ft_tester(test, test, 1);
 	ft_tester(test, test, 32);
