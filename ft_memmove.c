@@ -6,30 +6,36 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:03:06 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/06 17:08:00 by gdelhota         ###   ########.fr       */
+/*   Updated: 2024/11/07 20:14:46 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*d_cast;
-	char	*s_cast;
-	size_t	i;
+	unsigned char	*d_cast;
+	unsigned char	*s_cast;
+	size_t			i;
 
-	d_cast = (char *) dest;
-	s_cast = (char *) src;
-	i = -1;
-	if (s_cast < d_cast)
+	d_cast = (unsigned char *)dest;
+	s_cast = (unsigned char *)src;
+	i = 0;
+	if (src < dest)
 	{
-		while (++i < n)
-			d_cast[n - i - 1] = s_cast[n - i - 1];
+		while (n-- > 0)
+		{
+			d_cast[n] = s_cast[n];
+		}
 	}
-	else
+	else if (dest < src)
 	{
-		while (++i < n)
+		while (i < n)
+		{
 			d_cast[i] = s_cast[i];
+			i++;
+		}
 	}
 	return (dest);
 }
