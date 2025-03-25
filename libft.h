@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:11:11 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/05 16:37:31 by gdelhota         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:08:16 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *d, const char *s, size_t dstsize);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
-void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ftcalloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif

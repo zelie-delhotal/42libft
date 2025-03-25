@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 09:26:41 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/06 13:24:54 by gdelhota         ###   ########.fr       */
+/*   Created: 2024/11/06 11:06:17 by gdelhota          #+#    #+#             */
+/*   Updated: 2024/11/06 13:16:42 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	res;
-	int	i;
-	int	sign;
+	size_t	i;
+	char	*res;
 
+	res = (char *) s;
 	i = 0;
-	res = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	while (i < n)
 	{
-		i++;
-		sign = -1;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10 + (nptr[i] - '0');
+		res[i] = (unsigned char) c;
 		i++;
 	}
-	return (sign * res);
+	return (s);
 }
 
 /*#include <stdio.h>
-int	main(int ac, char **av)
+#include <string.h>
+int main(void)
 {
-	if (ac > 0)
-		printf("%d", ft_atoi(av[1]));
+	char *s = (char *) malloc(32);
+	s = (char *) ft_memset(s, 0, 32);
+	s = (char *) ft_memset(s, 'A', 31);
+	s = (char *) ft_memset(s, 'g', 4);
+	printf("%s\n", s);
 }*/

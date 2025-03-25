@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 09:26:41 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/06 13:24:54 by gdelhota         ###   ########.fr       */
+/*   Created: 2024/11/04 14:19:51 by gdelhota          #+#    #+#             */
+/*   Updated: 2024/11/06 13:32:22 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	res;
-	int	i;
-	int	sign;
+	size_t	i;
+	char	*cast;
 
+	if (n == 0)
+		return (0);
+	cast = (char *) s;
 	i = 0;
-	res = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+	while (i < n - 1 && cast[i] != c)
 		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
-	{
-		i++;
-		sign = -1;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * res);
+	if (cast[i] == c)
+		return ((void *) &s[i]);
+	return (0);
 }
 
 /*#include <stdio.h>
 int	main(int ac, char **av)
 {
 	if (ac > 0)
-		printf("%d", ft_atoi(av[1]));
+		printf("%s", (char *) ft_memchr(av[1], av[2][0], ft_atoi(av[3])));
 }*/
