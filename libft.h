@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:11:11 by gdelhota          #+#    #+#             */
-/*   Updated: 2025/04/16 16:58:56 by gdelhota         ###   ########.fr       */
+/*   Updated: 2025/04/19 17:19:59 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
+void	ft_error(int err_code, char *error);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));

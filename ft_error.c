@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <gdelhota@student.42perpigna      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 19:30:01 by gdelhota          #+#    #+#             */
-/*   Updated: 2025/04/19 17:29:16 by gdelhota         ###   ########.fr       */
+/*   Created: 2025/03/19 16:57:27 by gdelhota          #+#    #+#             */
+/*   Updated: 2025/04/19 17:19:35 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_error(int err_code, char *error)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i * sizeof(char));
+	len = 0;
+	while (error[len])
+		len++;
+	write(2, error, len);
+	write(2, "\n", 1);
+	exit(err_code);
 }
-
-/*#include <stdio.h>
-int main(int ac, char **av)
-{
-	if (ac > 0)
-	{
-		printf("%d", (int) ft_strlen(av[1]));
-	}
-}*/
