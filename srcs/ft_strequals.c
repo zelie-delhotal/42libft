@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strequals.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelhota <gdelhota@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 00:40:29 by gdelhota          #+#    #+#             */
-/*   Updated: 2025/05/06 02:55:06 by gdelhota         ###   ########.fr       */
+/*   Created: 2025/05/08 18:19:14 by gdelhota          #+#    #+#             */
+/*   Updated: 2025/05/08 18:27:41 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2, char *separator)
+int	ft_strequals(char *s1, char *s2)
 {
-	char	*res;
-	int		i;
-	int		j;
+	int	i;
 
-	res = malloc(ft_strlen(s1) + ft_strlen(s2) + ft_strlen(separator) + 1);
-	if (res == NULL)
-		return (NULL);
-	i = -1;
-	while (s1[++i])
-		res[i] = s1[i];
-	j = i;
-	while (separator[i-j])
+	if (s1 == NULL || s2 == NULL)
+		return (s1 == s2);
+	i = 0;
+	while (s1[i])
 	{
-		res[i] = separator[i - j];
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
 	}
-	j = i;
-	while (s2[i - j])
-	{
-		res[i] = s2[i - j];
-		i++;
-	}
-	res[i] = 0;
-	return(res);
+	return (1);
 }
