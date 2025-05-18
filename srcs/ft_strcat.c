@@ -6,7 +6,7 @@
 /*   By: gdelhota <gdelhota@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 00:40:29 by gdelhota          #+#    #+#             */
-/*   Updated: 2025/05/06 02:55:06 by gdelhota         ###   ########.fr       */
+/*   Updated: 2025/05/18 05:51:27 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strcat(char *s1, char *s2, char *separator)
 	while (s1[++i])
 		res[i] = s1[i];
 	j = i;
-	while (separator[i-j])
+	while (separator[i - j])
 	{
 		res[i] = separator[i - j];
 		i++;
@@ -37,5 +37,5 @@ char	*ft_strcat(char *s1, char *s2, char *separator)
 		i++;
 	}
 	res[i] = 0;
-	return(res);
+	return (res);
 }
