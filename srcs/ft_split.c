@@ -6,7 +6,7 @@
 /*   By: gdelhota <gdelhota@student.42perpigna      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:10 by gdelhota          #+#    #+#             */
-/*   Updated: 2024/11/13 19:26:11 by gdelhota         ###   ########.fr       */
+/*   Updated: 2025/05/06 21:24:08 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_count_words(const char *s, char *sep)
 	count = 0;
 	in_word = 0;
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		if (ft_strcontains(sep, s[i]))
 			in_word = 0;
@@ -32,6 +32,8 @@ static int	ft_count_words(const char *s, char *sep)
 		}
 		i++;
 	}
+	if (count == 0)
+		return (-1);
 	return (count);
 }
 

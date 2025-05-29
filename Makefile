@@ -6,7 +6,7 @@
 #    By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 15:41:48 by gdelhota          #+#    #+#              #
-#    Updated: 2025/05/06 01:05:00 by gdelhota         ###   ########.fr        #
+#    Updated: 2025/05/15 04:33:37 by gdelhota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,15 @@ INCLUDES = -I$(INCLUDES_DIR)
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_toupper.c ft_tolower.c ft_atoi.c \
+<<<<<<< HEAD
 	ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strjoin.c ft_strcontains.c\
 	ft_memchr.c ft_memset.c ft_bzero.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_calloc.c ft_strdup.c \
+=======
+	ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strjoin.c\
+	ft_memchr.c ft_memset.c ft_bzero.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_calloc.c ft_strdup.c ft_realloc.c\
+>>>>>>> 0b609cadb358818528b679a5de8c71cfc2b58813
 	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_free_all.c\
-	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_error.c ft_strcat.c
+	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_error.c ft_strcat.c ft_strequals.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS := $(addprefix $(OBJ_DIR),$(OBJS))
