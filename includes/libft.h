@@ -6,7 +6,7 @@
 /*   By: gdelhota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:11:11 by gdelhota          #+#    #+#             */
-/*   Updated: 2025/05/15 04:33:02 by gdelhota         ###   ########.fr       */
+/*   Updated: 2025/07/10 03:59:51 by gdelhota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 }				t_list;
 
 size_t	ft_strlen(const char *s);
+int		ft_isspace(char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
